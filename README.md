@@ -152,6 +152,29 @@ oraz komputerów:
 - Lightbox galerii zamyka się dotknięciem tła, krzyżykiem, klawiszem Esc
   lub przesunięciem palca.
 
+## Zgodność z przeglądarkami i systemami
+
+Strona to czysty HTML + CSS + JavaScript, bez zależności i bez budowania.
+Testowana i przygotowana pod:
+
+- **Windows / macOS / Linux** — Chrome, Edge, Firefox (aktualne wersje)
+- **Android** — Chrome, Samsung Internet (aktualne wersje)
+- **iOS / iPadOS** — Safari 14.5+ (iPhone i iPad)
+
+Zabezpieczenia dla starszych silników:
+
+- prefiksy `-webkit-backdrop-filter`, `-webkit-border-radius` (Safari),
+- fallbacki dla `inset` i `100dvh` (starsze Safari; wcześniej `top/right/bottom/left`,
+  a `dvh` ma zapasowy `vh`),
+- `padding` z wartością zapasową przed `max()` oraz `env(safe-area-inset-*)` —
+  obsługa notcha i paska gestów iPhone'a,
+- brak `fetch` → formularz wysyła się klasycznie (`form.submit()`),
+- `IntersectionObserver`, `prefers-reduced-motion`, `@media (hover: none)` —
+  z łagodnym zejściem, gdy brak wsparcia,
+- siatki `repeat(auto-fit, minmax(min(...), 1fr))` — przy starszym silniku
+  układ degraduje się do jednej kolumny, nic się nie rozjeżdża,
+- pola formularza mają 16 px, więc Safari na iOS nie powiększa ekranu.
+
 ## Uruchomienie
 
 Wystarczy otworzyć `index.html` w przeglądarce. Jeśli masz zainstalowany

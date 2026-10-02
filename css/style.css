@@ -281,6 +281,10 @@ p {
 .hero::after {
   content: "";
   position: absolute;
+  top: auto;
+  right: -10%;
+  bottom: -55%;
+  left: -10%;
   inset: auto -10% -55% -10%;
   height: 70%;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22) 0%, transparent 65%);
@@ -811,6 +815,117 @@ p {
   overflow: hidden;
 }
 
+/* ---------- Charakter: naklejka, pasek z wiatrem, polaroidy ---------- */
+
+.hero__sticker {
+  position: absolute;
+  top: clamp(1.5rem, 5vw, 3.5rem);
+  right: clamp(1.5rem, 5vw, 4rem);
+  z-index: 2;
+  width: 112px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  text-align: center;
+  background: var(--sun);
+  color: var(--blue-dark);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 12px 26px rgba(4, 41, 63, 0.28);
+  transform: rotate(8deg);
+}
+
+.hero__sticker span {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero__sticker strong {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.wind-strip {
+  background: var(--blue-dark);
+  color: var(--sand);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 0;
+}
+
+.wind-strip__track {
+  display: flex;
+  width: max-content;
+  animation: wind-scroll 28s linear infinite;
+}
+
+.wind-strip__track span {
+  padding: 0.75rem 0;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@keyframes wind-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.polaroids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 1.6rem;
+  justify-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.polaroid {
+  margin: 0;
+  width: 100%;
+  max-width: 320px;
+  background: var(--white);
+  padding: 0.7rem 0.7rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba(4, 41, 63, 0.18);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+.polaroid figcaption {
+  margin-top: 0.7rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.polaroid--a { transform: rotate(-2.5deg); }
+.polaroid--b { transform: rotate(1.8deg); }
+.polaroid--c { transform: rotate(-1.2deg); }
+
+@media (max-width: 860px) {
+  .hero__sticker { display: none; }
+}
+
+@media (max-width: 620px) {
+  .polaroid { transform: none; max-width: 100%; }
+}
+
 /* ---------- Stopka ---------- */
 
 .site-footer {
@@ -991,6 +1106,10 @@ p {
 
 .lightbox {
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0;
   z-index: 1000;
   display: none;
@@ -1288,6 +1407,10 @@ p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .wind-strip__track {
+    animation: none !important;
   }
 
   *,

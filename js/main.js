@@ -301,6 +301,12 @@
             ? action
             : action.replace("formsubmit.co/", "formsubmit.co/ajax/");
 
+        // Bardzo stare przeglądarki bez fetch — wyślij formularz klasycznie.
+        if (typeof fetch !== "function") {
+          form.submit();
+          return;
+        }
+
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent =
