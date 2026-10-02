@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#04293f" />
   <meta name="color-scheme" content="light" />
   <title data-i18n="info.title">Informacje i kontakt — Super Kite | Przystań Swarzewo</title>
-  <meta name="description" data-i18n-attr="content:info.desc" content="Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, superszkola@gmail.com." />
+  <meta name="description" data-i18n-attr="content:info.desc" content="Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, formularz kontaktowy i mapa." />
 
   <!-- SEO / social -->
   <link rel="canonical" href="https://twojadomena.pl/informacje.html" />
@@ -24,7 +24,7 @@
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Kontakt i lokalizacja — Super Kite" />
-  <meta property="og:description" content="Tel. 123 455 6789, superszkola@gmail.com. Formularz kontaktowy i mapa — Przystań Swarzewo." />
+  <meta property="og:description" content="Tel. 123 455 6789. Formularz kontaktowy i mapa — Przystań Swarzewo." />
   <meta property="og:url" content="https://twojadomena.pl/informacje.html" />
   <meta property="og:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
   <meta property="og:image:width" content="1280" />
@@ -33,7 +33,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kontakt i lokalizacja — Super Kite" />
-  <meta name="twitter:description" content="Tel. 123 455 6789, superszkola@gmail.com. Przystań Swarzewo, Polska." />
+  <meta name="twitter:description" content="Tel. 123 455 6789. Przystań Swarzewo, Polska." />
   <meta name="twitter:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -50,7 +50,6 @@
       "name": "Super Kite — szkoła kitesurfingu",
       "url": "https://twojadomena.pl/",
       "telephone": "+481234556789",
-      "email": "superszkola@gmail.com",
       "image": "https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg",
       "address": {
         "@type": "PostalAddress",
@@ -141,7 +140,7 @@
                 <span class="contact-item__icon" aria-hidden="true">✉️</span>
                 <span>
                   <small data-i18n="info.emailLabel">E-mail</small>
-                  <a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a>
+                  <a href="mailto:twoj-adres@email.pl" data-email>twoj-adres@email.pl</a>
                 </span>
               </li>
               <li class="contact-item">
@@ -188,16 +187,19 @@
         </div>
 
         <div class="form-card">
-          <!-- Aby podłączyć formularz: załóż darmowe konto na https://formspree.io
-               i zamień YOUR_FORM_ID poniżej na swój identyfikator formularza. -->
-          <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Formularz wysyła wiadomości przez darmową usługę FormSubmit (bez konta).
+               Wiadomość trafia na adres podany w action poniżej — podmień go na własny.
+               Przy pierwszej wysyłce FormSubmit wyśle na ten adres link do aktywacji. -->
+          <form class="form" id="contact-form" action="https://formsubmit.co/twoj-adres@email.pl" method="POST">
             <input type="hidden" name="_subject" value="Nowa wiadomość ze strony Super Kite" data-i18n-attr="value:info.formSubject" />
-            <input type="hidden" name="_language" value="pl" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_autoresponse" value="Dziękujemy za wiadomość do Super Kite!" data-i18n-attr="value:info.formAutoresponse" />
 
             <!-- Honeypot: ukryte pole-pułapka na boty. Ludzie go nie widzą, boty wypełniają. -->
             <div class="form__hp" aria-hidden="true">
-              <label for="cf-gotcha">Nie wypełniaj tego pola</label>
-              <input type="text" id="cf-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+              <label for="cf-honey">Nie wypełniaj tego pola</label>
+              <input type="text" id="cf-honey" name="_honey" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form__row">
@@ -300,7 +302,7 @@
           <h3 data-i18n="footer.contactHeading">Kontakt</h3>
           <ul>
             <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
-            <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
+            <li><a href="mailto:twoj-adres@email.pl" data-email>twoj-adres@email.pl</a></li>
             <li data-i18n="footer.location">Przystań Swarzewo, Polska</li>
           </ul>
         </div>
@@ -310,6 +312,7 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>

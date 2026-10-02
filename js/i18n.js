@@ -111,7 +111,7 @@ window.SK_I18N = {
 
     /* ---------- Informacje ---------- */
     "info.title": "Informacje i kontakt — Super Kite | Przystań Swarzewo",
-    "info.desc": "Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, superszkola@gmail.com. Znajdziesz nas na przystani w Swarzewie nad Zatoką Pucką.",
+    "info.desc": "Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, {email}. Znajdziesz nas na przystani w Swarzewie nad Zatoką Pucką.",
     "info.eyebrow": "Informacje",
     "info.h1": "Kontakt i lokalizacja",
     "info.lead": "Masz pytanie o kurs, wolne terminy albo warunki na wodzie? Zadzwoń, napisz albo po prostu przyjedź na przystań — jesteśmy na miejscu.",
@@ -163,6 +163,7 @@ window.SK_I18N = {
     "info.formErr": "Ups, nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń do nas.",
     "info.formNotConfigured": "Formularz nie jest jeszcze skonfigurowany. Napisz do nas bezpośrednio na e-mail lub zadzwoń.",
     "info.formSubject": "Nowa wiadomość ze strony Super Kite",
+    "info.formAutoresponse": "Dziękujemy za wiadomość do Super Kite! Odpowiemy najszybciej, jak możemy.",
     "info.formHint": "Twoje dane wykorzystamy wyłącznie do odpowiedzi na tę wiadomość.",
 
     /* ---------- Galeria ---------- */
@@ -299,7 +300,7 @@ window.SK_I18N = {
 
     /* ---------- Info ---------- */
     "info.title": "Info and contact — Super Kite | Swarzewo Marina",
-    "info.desc": "Contact Super Kite kite school: phone 123 455 6789, superszkola@gmail.com. You will find us at the marina in Swarzewo on the Bay of Puck.",
+    "info.desc": "Contact Super Kite kite school: phone 123 455 6789, {email}. You will find us at the marina in Swarzewo on the Bay of Puck.",
     "info.eyebrow": "Info",
     "info.h1": "Contact and location",
     "info.lead": "Do you have a question about a course, available dates or conditions on the water? Call us, write to us or just come to the marina — we are there.",
@@ -351,6 +352,7 @@ window.SK_I18N = {
     "info.formErr": "Sorry, the message could not be sent. Please try again or call us.",
     "info.formNotConfigured": "The form is not configured yet. Please e-mail or call us directly.",
     "info.formSubject": "New message from the Super Kite website",
+    "info.formAutoresponse": "Thank you for your message to Super Kite! We will reply as soon as we can.",
     "info.formHint": "We will use your data only to reply to this message.",
 
     /* ---------- Gallery ---------- */

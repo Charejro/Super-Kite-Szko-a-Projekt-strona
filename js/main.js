@@ -7,8 +7,11 @@
 
   var STORAGE_KEY = "superkite-lang";
   var DEFAULT_LANG = "pl";
+  var EMAIL_PLACEHOLDER = "twoj-adres@email.pl";
 
   var dict = window.SK_I18N || { pl: {}, en: {} };
+  var config = window.SK_CONFIG || {};
+  var CONTACT_EMAIL = config.contactEmail || EMAIL_PLACEHOLDER;
 
   /* ---------- Tłumaczenia ---------- */
 
@@ -33,7 +36,23 @@
     var table = dict[lang] || {};
     var value = table[key];
     if (value == null) value = (dict[DEFAULT_LANG] || {})[key];
-    return value == null ? null : value;
+    if (value == null) return null;
+    if (typeof value === "string" && value.indexOf("{email}") !== -1) {
+      value = value.replace(/\{email\}/g, CONTACT_EMAIL);
+    }
+    return value;
+  }
+
+  /* ---------- Konfiguracja: e-mail w stopce, danych kontaktowych i formularzu ---------- */
+
+  function applyConfig() {
+    document.querySelectorAll("[data-email]").forEach(function (el) {
+      if (el.tagName === "A") el.setAttribute("href", "mailto:" + CONTACT_EMAIL);
+      el.textContent = CONTACT_EMAIL;
+    });
+
+    var form = document.getElementById("contact-form");
+    if (form) form.setAttribute("action", "https://formsubmit.co/" + CONTACT_EMAIL);
   }
 
   function applyLanguage(lang) {
@@ -121,6 +140,9 @@
   /* ---------- Start ---------- */
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Konfiguracja (e-mail w stopce, danych kontaktowych i formularzu)
+    applyConfig();
+
     // Język
     applyLanguage(detectLang());
 
@@ -261,19 +283,23 @@
           return;
         }
 
-        var langField = form.querySelector('input[name="_language"]');
-        if (langField) langField.value = document.documentElement.lang || DEFAULT_LANG;
-
-        var action = form.getAttribute("action") || "";
-        if (action.indexOf("YOUR_FORM_ID") !== -1) {
+        // Jeśli adres e-mail nie został jeszcze ustawiony, nie wysyłamy.
+        if (!CONTACT_EMAIL || CONTACT_EMAIL === EMAIL_PLACEHOLDER) {
           setStatus("error", "info.formNotConfigured");
-          if (window.console && console.warn) {
-            console.warn(
-              "Formspree: podmień YOUR_FORM_ID w informacje.html na własny identyfikator formularza."
-            );
-          }
           return;
         }
+
+        var action = form.getAttribute("action") || "";
+        if (!action) {
+          setStatus("error", "info.formNotConfigured");
+          return;
+        }
+
+        // FormSubmit: wersja AJAX ma dodatkowy segment /ajax/ w adresie.
+        var endpoint =
+          action.indexOf("/ajax/") !== -1
+            ? action
+            : action.replace("formsubmit.co/", "formsubmit.co/ajax/");
 
         if (submitBtn) {
           submitBtn.disabled = true;
@@ -282,7 +308,7 @@
         }
         setStatus("pending", "info.formSending");
 
-        fetch(action, {
+        fetch(endpoint, {
           method: "POST",
           body: new FormData(form),
           headers: { Accept: "application/json" }
@@ -293,7 +319,10 @@
               return {};
             });
           })
-          .then(function () {
+          .then(function (data) {
+            if (data && (data.success === "false" || data.success === false)) {
+              throw new Error("FormSubmit: " + (data.message || "error"));
+            }
             form.reset();
             setStatus("success", "info.formOk");
           })

@@ -13,6 +13,7 @@ super-kite/
 ├── galeria.html      # galeria zdjęć (z lightboxem)
 ├── informacje.html   # kontakt + godziny pracy + formularz + mapa
 ├── css/style.css     # wspólny styl
+├── js/config.js      # ⚙️ konfiguracja — TU wpisujesz swój adres e-mail
 ├── js/i18n.js        # słowniki tłumaczeń PL / EN
 ├── js/main.js        # język, menu mobilne, lightbox, formularz, rok w stopce
 ├── robots.txt        # reguły dla robotów wyszukiwarek
@@ -42,39 +43,56 @@ super-kite/
   „Dlaczego Super Kite jest dla Ciebie?” oraz mapa Google z lokalizacją.
 - **Cennik** — 70 EUR / 1 h, 120 EUR / 2 h, 320 EUR / 6 h, 400 EUR / 8 h.
 - **Galeria** — 9 zdjęć z lightboxem (klik = powiększenie, Esc = zamknięcie).
-- **Informacje** — telefon `123 455 6789`, e-mail `superszkola@gmail.com`,
-  formularz kontaktowy (Formspree) i mapa Google z lokalizacją
+- **Informacje** — telefon `123 455 6789`, e-mail (ustawiany w `js/config.js`),
+  formularz kontaktowy (FormSubmit) i mapa Google z lokalizacją
   (Przystań Swarzewo, Polska).
 
-## Formularz kontaktowy (Formspree)
+## Formularz kontaktowy (FormSubmit — bez konta)
 
 Formularz na `informacje.html` (`#formularz`) wysyła wiadomości przez darmową
-usługę **Formspree** — bez własnego backendu. Aby podłączyć skrzynkę:
+usługę **FormSubmit** (<https://formsubmit.co>) — **bez zakładania konta** i bez
+własnego backendu.
 
-1. Załóż darmowe konto na <https://formspree.io> i utwórz nowy formularz.
-2. Skopiuj identyfikator z adresu endpointu, np. `https://formspree.io/f/abcdwxyz`
-   → identyfikatorem jest `abcdwxyz`.
-3. W `informacje.html` podmień `YOUR_FORM_ID`:
+**Adres wpisujesz w jednym miejscu — `js/config.js`:**
 
-   ```html
-   <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+```js
+window.SK_CONFIG = {
+  contactEmail: "twoj-adres@email.pl"   // <-- wpisz tu swój prawdziwy adres e-mail
+};
+```
 
-4. Wyślij testową wiadomość — pierwsze zgłoszenie trzeba zatwierdzić w panelu
-   Formspree. Odpowiedzi trafiają na e-mail przypisany do konta.
+Po zapisaniu tego pliku `js/main.js` sam podstawi adres:
+
+- w formularzu (`action="https://formsubmit.co/adres"`),
+- w stopce i w sekcji „Dane kontaktowe” (łącza `mailto:` oraz ich treść),
+- w opisie strony (`info.desc`).
+
+Dopóki w `config.js` jest placeholder, formularz pokaże komunikat „formularz
+nie jest skonfigurowany” zamiast próbować wysyłki.
+
+**Aktywacja (jednorazowo):** wyślij formularz z prawdziwej strony. FormSubmit
+wyśle na Twój adres e-mail link potwierdzający — kliknij go i od tej chwili
+wiadomości będą przychodzić. Pierwszą wiadomość może trzeba wysłać ponownie
+po aktywacji.
+
+**Ukrycie adresu (zalecane):** po aktywacji FormSubmit poda losowy endpoint
+(np. `https://formsubmit.co/xxxxxxxxxxxxxxxx`). Możesz wpisać go na stałe
+w `action` w `informacje.html`, żeby adres e-mail nie był widoczny w kodzie.
+
+> Uwaga: przy wyłączonym JavaScripcie formularz wysyła POST na adres zapisany
+> bezpośrednio w `action` w `informacje.html` (domyślnie placeholder). Jeśli
+> zależy Ci na obsłudze bez JS, wpisz tam docelowy adres ręcznie.
 
 Jak to działa:
 
-- `js/main.js` przechwytuje wysyłkę i robi `fetch` do Formspree, więc użytkownik
-  nie opuszcza strony — widzi komunikat powodzenia/błędu (`aria-live`).
-- Bez JavaScriptu formularz działa klasycznie (zwykły POST do Formspree).
-- Dodane są: pole `_subject` (temat e-maila), `_language` oraz ukryty honeypot
-  `_gotcha` na boty.
+- `js/main.js` przechwytuje wysyłkę i robi `fetch` do endpointu AJAX
+  (`…/ajax/adres`), więc użytkownik nie opuszcza strony — widzi komunikat
+  powodzenia/błędu (`aria-live`).
+- Pola specjalne: `_subject` (temat), `_template=table` (czytelny e-mail),
+  `_captcha=false`, `_autoresponse` (auto-odpowiedź do nadawcy) oraz ukryty
+  honeypot `_honey` na boty.
 - Walidacja: wymagane imię, e-mail i wiadomość + checkbox zgody (RODO);
   komunikaty i etykiety są dwujęzyczne (`info.form*` w `js/i18n.js`).
-
-Dopóki `YOUR_FORM_ID` nie zostanie podmieniony, formularz pokaże komunikat
-„formularz nie jest skonfigurowany” zamiast wysyłać wiadomość.
 
 ## Zdjęcia
 
@@ -157,7 +175,8 @@ i `informacje.html`.
 
 - Zdjęcia w galerii (obecne są poglądowe, z Wikimedia Commons)
 - Godziny pracy i sezon w `informacje.html`
-- Adres e-mail: przyjęto `superszkola@gmail.com`
-- Identyfikator Formspree: podmień `YOUR_FORM_ID` w `informacje.html`
+- **E-mail: wpisz prawdziwy adres w `js/config.js`** (`contactEmail`) —
+  podstawi się do formularza, stopki i danych kontaktowych
+- Aktywuj formularz: wyślij go raz i kliknij link potwierdzający z FormSubmit
 - Domena: podmień `https://twojadomena.pl` w `<head>` stron, `sitemap.xml`
   i `robots.txt` na własny adres
