@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="price.title">Cennik — Super Kite | Kursy kitesurfingu</title>
+  <meta name="description" data-i18n-attr="content:price.desc" content="Cennik kursów kitesurfingu Super Kite: 70 EUR za godzinę, 120 EUR za 2 h, 320 EUR za 6 h, 400 EUR za 8 h." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Menu główne">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+            </svg>
+          </span>
+          <span>Super <strong>Kite</strong></span>
+        </a>
+
+        <ul class="nav__links">
+          <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="index.html#o-szkole" data-i18n="nav.about">O szkole</a></li>
+          <li><a href="index.html#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
+          <li><a href="cennik.html" class="is-active" data-i18n="nav.pricing">Cennik</a></li>
+          <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+          <li><a href="informacje.html" data-i18n="nav.info">Informacje</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="lang" role="group" aria-label="Język / Language">
+            <button class="lang__btn" type="button" data-lang="pl" aria-pressed="true">PL</button>
+            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="price.eyebrow">Cennik</span>
+          <h1 data-i18n="price.h1">Kursy kitesurfingu — ceny</h1>
+          <p data-i18n="price.lead">Wybierz pakiet dopasowany do Twojego czasu i celu.</p>
+        </div>
+
+        <div class="price-grid">
+
+          <article class="price-card">
+            <p class="price-card__time" data-i18n="price.t1">1 godzina</p>
+            <p class="price-card__price">70 <small>EUR</small></p>
+            <p class="price-card__desc" data-i18n="price.d1">Idealne na pierwsze spotkanie z latawcem.</p>
+            <a class="btn btn--dark btn--block" href="informacje.html" data-i18n="price.reserve">Zarezerwuj</a>
+          </article>
+
+          <article class="price-card">
+            <p class="price-card__time" data-i18n="price.t2">2 godziny</p>
+            <p class="price-card__price">120 <small>EUR</small></p>
+            <p class="price-card__desc" data-i18n="price.d2">60 EUR za godzinę. Najpopularniejszy start.</p>
+            <a class="btn btn--dark btn--block" href="informacje.html" data-i18n="price.reserve">Zarezerwuj</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <span class="price-card__badge" data-i18n="price.badge">Najczęściej wybierany</span>
+            <p class="price-card__time" data-i18n="price.t3">6 godzin</p>
+            <p class="price-card__price">320 <small>EUR</small></p>
+            <p class="price-card__desc" data-i18n="price.d3">Kurs dla początkujących — około 53 EUR za godzinę.</p>
+            <a class="btn btn--primary btn--block" href="informacje.html" data-i18n="price.reserve">Zarezerwuj</a>
+          </article>
+
+          <article class="price-card">
+            <p class="price-card__time" data-i18n="price.t4">8 godzin</p>
+            <p class="price-card__price">400 <small>EUR</small></p>
+            <p class="price-card__desc" data-i18n="price.d4">Tylko 50 EUR za godzinę. Kurs dla ambitnych.</p>
+            <a class="btn btn--dark btn--block" href="informacje.html" data-i18n="price.reserve">Zarezerwuj</a>
+          </article>
+
+        </div>
+
+        <div class="note" data-i18n-html="price.note">
+          <strong>Co zawiera cena?</strong> Sprzęt kite, piankę, kamizelkę i kask oraz ubezpieczenie.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">💳</div>
+            <h3 data-i18n="price.c1t">Płatność</h3>
+            <p data-i18n="price.c1d">Gotówka lub przelew.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">📅</div>
+            <h3 data-i18n="price.c2t">Rezerwacja</h3>
+            <p data-i18n="price.c2d">Zadzwoń lub napisz — wybierzemy termin.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🌬️</div>
+            <h3 data-i18n="price.c3t">Przy złej pogodzie</h3>
+            <p data-i18n="price.c3d">Przenosimy zajęcia na inny termin bez dodatkowych kosztów.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+              </svg>
+            </span>
+            <span>Super <strong>Kite</strong></span>
+          </a>
+          <p style="margin-top:1rem;max-width:34ch" data-i18n="footer.tagline">Szkoła kitesurfingu nad Zatoką Pucką.</p>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+            <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
+            <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+            <li><a href="informacje.html" data-i18n="nav.info">Informacje i kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <ul>
+            <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
+            <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
+            <li data-i18n="footer.location">Przystań Swarzewo, Polska</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"></div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

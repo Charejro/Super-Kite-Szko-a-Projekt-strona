@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="info.title">Informacje i kontakt — Super Kite | Przystań Swarzewo</title>
+  <meta name="description" data-i18n-attr="content:info.desc" content="Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, superszkola@gmail.com." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Menu główne">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+            </svg>
+          </span>
+          <span>Super <strong>Kite</strong></span>
+        </a>
+
+        <ul class="nav__links">
+          <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="index.html#o-szkole" data-i18n="nav.about">O szkole</a></li>
+          <li><a href="index.html#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
+          <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
+          <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+          <li><a href="informacje.html" class="is-active" data-i18n="nav.info">Informacje</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="lang" role="group" aria-label="Język / Language">
+            <button class="lang__btn" type="button" data-lang="pl" aria-pressed="true">PL</button>
+            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="info.eyebrow">Informacje</span>
+          <h1 data-i18n="info.h1">Kontakt i lokalizacja</h1>
+          <p data-i18n="info.lead">Masz pytanie o kurs, wolne terminy albo warunki na wodzie? Zadzwoń, napisz albo przyjedź na przystań.</p>
+        </div>
+
+        <div class="grid grid--2">
+
+          <div>
+            <h2 data-i18n="info.contactH2">Dane kontaktowe</h2>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">📞</span>
+                <span>
+                  <small data-i18n="info.phoneLabel">Telefon</small>
+                  <a href="tel:1234556789">123 455 6789</a>
+                </span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">✉️</span>
+                <span>
+                  <small data-i18n="info.emailLabel">E-mail</small>
+                  <a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a>
+                </span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">📍</span>
+                <span>
+                  <small data-i18n="info.addressLabel">Adres</small>
+                  <strong data-i18n="info.addressValue">Przystań Swarzewo, Polska</strong>
+                </span>
+              </li>
+            </ul>
+
+            <p style="margin-top:1.5rem">
+              <a class="btn btn--primary" href="mailto:superszkola@gmail.com?subject=Kitesurfing" data-i18n="info.write">Napisz do nas</a>
+              <a class="btn btn--dark" href="cennik.html" style="margin-left:.5rem" data-i18n="info.pricing">Zobacz cennik</a>
+            </p>
+          </div>
+
+          <div>
+            <h2 data-i18n="info.hoursH2">Godziny pracy</h2>
+            <div class="card">
+              <ul class="info-hours">
+                <li><span data-i18n="info.day1l">Poniedziałek – Piątek</span><span data-i18n="info.day1v">9:00 – 19:00</span></li>
+                <li><span data-i18n="info.day2l">Sobota</span><span data-i18n="info.day2v">8:00 – 19:00</span></li>
+                <li><span data-i18n="info.day3l">Niedziela</span><span data-i18n="info.day3v">9:00 – 17:00</span></li>
+                <li><span data-i18n="info.day4l">Sezon</span><span data-i18n="info.day4v">maj – wrzesień</span></li>
+              </ul>
+              <p style="margin:1rem 0 0;color:var(--text-muted);font-size:.95rem" data-i18n="info.hoursNote">
+                Zajęcia ustalamy także poza godzinami — wystarczy wcześniejszy telefon.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sand" id="mapa">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="info.mapEyebrow">Mapa</span>
+          <h2 data-i18n="info.mapH2">Jesteśmy na przystani w Swarzewie</h2>
+          <p data-i18n="info.mapLead">Swarzewo leży nad Zatoką Pucką, kilka kilometrów od Pucka.</p>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="Mapa Google — przystań w Swarzewie"
+            src="https://maps.google.com/maps?q=Przysta%C5%84%20Swarzewo%2C%20Polska&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="map-caption" data-i18n="info.mapCaption">Przystań Swarzewo, Polska.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+              </svg>
+            </span>
+            <span>Super <strong>Kite</strong></span>
+          </a>
+          <p style="margin-top:1rem;max-width:34ch" data-i18n="footer.tagline">Szkoła kitesurfingu nad Zatoką Pucką.</p>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+            <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
+            <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+            <li><a href="informacje.html" data-i18n="nav.info">Informacje i kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <ul>
+            <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
+            <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
+            <li data-i18n="footer.location">Przystań Swarzewo, Polska</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"></div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

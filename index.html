@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="home.title">Super Kite — szkoła kitesurfingu w Swarzewie</title>
+  <meta name="description" data-i18n-attr="content:home.desc" content="Super Kite — szkoła kitesurfingu na Zatoce Puckiej. 5 lat na rynku, świetne opinie, kursy od 70 EUR." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAGŁÓWEK ================= -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Menu główne">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+            </svg>
+          </span>
+          <span>Super <strong>Kite</strong></span>
+        </a>
+
+        <ul class="nav__links">
+          <li><a href="index.html" class="is-active" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="#o-szkole" data-i18n="nav.about">O szkole</a></li>
+          <li><a href="#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
+          <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
+          <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+          <li><a href="informacje.html" data-i18n="nav.info">Informacje</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <div class="lang" role="group" aria-label="Język / Language">
+            <button class="lang__btn" type="button" data-lang="pl" aria-pressed="true">PL</button>
+            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <span class="eyebrow" data-i18n="home.eyebrow">Szkoła kitesurfingu · Zatoka Pucka</span>
+          <h1 data-i18n-html="home.h1">Naucz się latać nad wodą<br /><span>razem z Super Kite</span></h1>
+          <p class="hero__lead" data-i18n="home.lead">
+            Kameralne grupy, doświadczeni instruktorzy i sprzęt, który wybacza błędy.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="cennik.html" data-i18n="home.btnPricing">Zobacz cennik</a>
+            <a class="btn btn--ghost" href="#lokalizacja" data-i18n="home.btnLocation">Zobacz lokalizację</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero__stats">
+          <div class="stat"><strong data-i18n="home.stat1v">5 lat</strong><span data-i18n="home.stat1l">na rynku kitesurfingu</span></div>
+          <div class="stat"><strong data-i18n="home.stat2v">4,9 / 5</strong><span data-i18n="home.stat2l">średnia z opinii kursantów</span></div>
+          <div class="stat"><strong data-i18n="home.stat3v">100%</strong><span data-i18n="home.stat3l">dobrze dobrany sprzęt i pianki</span></div>
+          <div class="stat"><strong data-i18n="home.stat4v">Swarzewo</strong><span data-i18n="home.stat4l">płytka i bezpieczna woda</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= O SZKOLE ================= -->
+    <section class="section" id="o-szkole" data-nav-section>
+      <div class="container">
+        <div class="about">
+          <div>
+            <span class="eyebrow" data-i18n="home.aboutEyebrow">O szkole</span>
+            <h2 data-i18n="home.aboutH2">Jesteśmy na rynku od 5 lat i kochamy to, co robimy</h2>
+            <p data-i18n-html="home.aboutP1"><strong>Super Kite</strong> to ekipa instruktorów, którzy od pięciu lat uczą kitesurfingu nad Zatoką Pucką.</p>
+            <p data-i18n="home.aboutP2">Nie gonimy za ilością godzin, a za efektem.</p>
+
+            <ul class="about__list">
+              <li data-i18n="home.aboutLi1">Doświadczeni, certyfikowani instruktorzy</li>
+              <li data-i18n="home.aboutLi2">Nowy sprzęt dostosowany do Ciebie</li>
+              <li data-i18n="home.aboutLi3">Małe grupy — maksymalnie 2–3 osoby na instruktora</li>
+              <li data-i18n="home.aboutLi4">Płytkie, osłonięte wody Zatoki Puckiej</li>
+              <li data-i18n="home.aboutLi5">Sprzęt, ubezpieczenie i pianka w cenie kursu</li>
+            </ul>
+          </div>
+
+          <aside class="about__panel">
+            <h3 data-i18n="home.reviewsH3">Co mówią kursanci</h3>
+
+            <div class="stars" aria-label="5 / 5">★★★★★</div>
+            <p class="quote" data-i18n="home.review1">„Pierwszy raz na desce i już po drugiej lekcji jechałem sam.”</p>
+            <p class="quote__author" data-i18n="home.review1a">— Marta, kurs 6 h</p>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.2);margin:1.4rem 0" />
+
+            <div class="stars" aria-label="5 / 5">★★★★★</div>
+            <p class="quote" data-i18n="home.review2">„Najlepsza szkoła, w jakiej byłem.”</p>
+            <p class="quote__author" data-i18n="home.review2a">— Kamil, kurs 8 h</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DLACZEGO MY ================= -->
+    <section class="section section--tint" id="dlaczego-my" data-nav-section>
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="home.whyEyebrow">Dlaczego my</span>
+          <h2 data-i18n="home.whyH2">Dlaczego Super Kite jest dla Ciebie?</h2>
+          <p data-i18n="home.whyLead">Bo nauka kitesurfingu ma być bezpieczna, skuteczna i po prostu przyjemna.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🎓</div>
+            <h3 data-i18n="home.why1t">Uczysz się skutecznie</h3>
+            <p data-i18n="home.why1d">Metoda małych kroków: wiatr, latawiec, deska.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🛟</div>
+            <h3 data-i18n="home.why2t">Bezpieczeństwo przede wszystkim</h3>
+            <p data-i18n="home.why2d">Płytka zatoka i asekuracja z łodzi.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">💶</div>
+            <h3 data-i18n="home.why3t">Przejrzyste ceny</h3>
+            <p data-i18n="home.why3d">Płacisz za czas na wodzie, bez ukrytych kosztów.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">👨‍👩‍👧</div>
+            <h3 data-i18n="home.why4t">Dla każdego — solo, para, rodzina</h3>
+            <p data-i18n="home.why4d">Dopasowujemy tempo do Ciebie, nie do grupy.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">💬</div>
+            <h3 data-i18n="home.why5t">Świetne opinie i stała opieka</h3>
+            <p data-i18n="home.why5d">Doradzimy, jaki sprzęt kupić i gdzie jeździć dalej.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🌊</div>
+            <h3 data-i18n="home.why6t">Idealne warunki do nauki</h3>
+            <p data-i18n="home.why6d">Osłonięte, płytkie wody Zatoki Puckiej.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOKALIZACJA / MAPA ================= -->
+    <section class="section section--sand" id="lokalizacja">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="home.locEyebrow">Lokalizacja</span>
+          <h2 data-i18n="home.locH2">Znajdź nas na mapie</h2>
+          <p data-i18n-html="home.locLead">Spotykamy się na przystani w <strong>Swarzewie</strong>.</p>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="Mapa Google — przystań w Swarzewie"
+            src="https://maps.google.com/maps?q=Przysta%C5%84%20Swarzewo%2C%20Polska&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="map-caption" data-i18n-html="home.locCaption">Przystań Swarzewo, Polska.</p>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="card" style="text-align:center;padding:2.6rem 1.6rem">
+          <h2 data-i18n="home.ctaH2">Zacznij swoją przygodę z kitesurfingiem</h2>
+          <p style="max-width:56ch;margin:0 auto 1.6rem;color:var(--text-muted)" data-i18n="home.ctaText">
+            Wybierz pakiet godzin, zadzwoń lub napisz — resztą zajmiemy się my.
+          </p>
+          <div class="hero__actions" style="justify-content:center">
+            <a class="btn btn--dark" href="cennik.html" data-i18n="home.ctaPricing">Zobacz cennik</a>
+            <a class="btn btn--primary" href="informacje.html" data-i18n="home.ctaContact">Skontaktuj się</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= STOPKA ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 4 21l8-4 8 4-8-18Z" />
+              </svg>
+            </span>
+            <span>Super <strong>Kite</strong></span>
+          </a>
+          <p style="margin-top:1rem;max-width:34ch" data-i18n="footer.tagline">Szkoła kitesurfingu nad Zatoką Pucką.</p>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+            <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
+            <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
+            <li><a href="informacje.html" data-i18n="nav.info">Informacje i kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <ul>
+            <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
+            <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
+            <li data-i18n="footer.location">Przystań Swarzewo, Polska</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"></div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
