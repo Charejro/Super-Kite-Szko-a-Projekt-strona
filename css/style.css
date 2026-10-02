@@ -17,6 +17,7 @@
   --shadow: 0 18px 40px rgba(4, 41, 63, 0.14);
   --shadow-sm: 0 8px 20px rgba(4, 41, 63, 0.1);
   --max-width: 1180px;
+  --header-h: 72px;
 }
 
 * {
@@ -25,6 +26,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -34,15 +38,31 @@ body {
   background: var(--white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 a {
   color: var(--blue);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
 }
 
 h1,
@@ -75,6 +95,8 @@ p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.25rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
 }
 
 .section {
@@ -120,6 +142,8 @@ p {
   top: 0;
   z-index: 100;
   background: rgba(255, 255, 255, 0.92);
+  padding-top: env(safe-area-inset-top);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(4, 41, 63, 0.08);
 }
@@ -129,7 +153,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 72px;
+  min-height: var(--header-h);
 }
 
 .brand {
@@ -194,11 +218,14 @@ p {
 
 .nav__toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
   border: 0;
   background: var(--blue-dark);
   color: var(--white);
   width: 44px;
   height: 44px;
+  -webkit-border-radius: 12px;
   border-radius: 12px;
   cursor: pointer;
   font-size: 1.3rem;
@@ -286,12 +313,16 @@ p {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.6rem;
+  min-height: 46px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.98rem;
   text-decoration: none;
   border: 2px solid transparent;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -527,7 +558,7 @@ p {
 
 .map-wrap iframe {
   width: 100%;
-  height: 440px;
+  height: clamp(280px, 52vw, 440px);
   border: 0;
   display: block;
 }
@@ -845,26 +876,38 @@ p {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ---------- Responsywność ---------- */
+/* ---------- Responsywność: telefony, tablety, ekrany dotykowe ---------- */
 
+/* Średnie ekrany: trochę ciaśniejsza nawigacja desktopowa */
+@media (min-width: 981px) and (max-width: 1120px) {
+  .nav__links a {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablety i telefony — menu przechodzi w tryb hamburgera */
 @media (max-width: 980px) {
   .about {
     grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 1.6rem;
   }
 
   .nav__toggle {
-    display: block;
+    display: inline-flex;
   }
 
   .nav__links {
     position: absolute;
-    top: 72px;
+    top: 100%;
     left: 0;
     right: 0;
+    margin-left: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0.25rem;
@@ -875,6 +918,11 @@ p {
     opacity: 0;
     pointer-events: none;
     transition: transform 0.25s ease, opacity 0.25s ease;
+    max-height: calc(100vh - var(--header-h));
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .nav__links.is-open {
@@ -883,11 +931,160 @@ p {
     pointer-events: auto;
   }
 
-  .nav {
-    position: relative;
+  .nav__links a {
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .lang__btn {
+    padding: 0.5rem 0.85rem;
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
 
   .map-wrap iframe {
-    height: 340px;
+    height: clamp(280px, 55vw, 380px);
+  }
+}
+
+/* Telefony */
+@media (max-width: 620px) {
+  .hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .stat {
+    padding: 0.85rem 1rem;
+  }
+
+  .stat strong {
+    font-size: 1.45rem;
+  }
+
+  .hero__actions {
+    gap: 0.6rem;
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .about__panel {
+    padding: 1.5rem;
+  }
+
+  .section__head {
+    margin-bottom: 1.8rem;
+  }
+
+  .price-card__price {
+    font-size: 2.2rem;
+  }
+
+  .gallery-item img {
+    height: 210px;
+  }
+
+  .site-footer {
+    padding-bottom: calc(1.6rem + env(safe-area-inset-bottom));
+  }
+
+  .site-footer ul {
+    gap: 0.15rem;
+  }
+
+  .site-footer ul a {
+    display: inline-block;
+    padding: 0.4rem 0;
+  }
+
+  .info-hours li {
+    flex-wrap: wrap;
+  }
+
+  .lightbox {
+    padding: 0.75rem;
+  }
+
+  .lightbox__figure {
+    max-width: 94vw;
+    max-height: 84vh;
+  }
+
+  .lightbox__img {
+    max-height: 74vh;
+    border-radius: 8px;
+  }
+
+  .lightbox__close {
+    top: max(0.6rem, env(safe-area-inset-top));
+    right: max(0.6rem, env(safe-area-inset-right));
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Bardzo małe ekrany (np. iPhone SE) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: max(0.9rem, env(safe-area-inset-left));
+    padding-right: max(0.9rem, env(safe-area-inset-right));
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* Telefony w orientacji poziomej — mniej pionowego oddechu */
+@media (max-width: 980px) and (orientation: landscape) and (max-height: 480px) {
+  .hero__inner {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section {
+    padding: 2.2rem 0;
+  }
+}
+
+/* Urządzenia dotykowe — wyłączamy „przyklejony” efekt hover */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
+
+  .price-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .gallery-item:hover img {
+    transform: none;
+  }
+}
+
+/* Szacunek dla ustawień dostępności */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

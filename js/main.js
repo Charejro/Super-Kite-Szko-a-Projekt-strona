@@ -134,15 +134,37 @@
     var toggle = document.querySelector(".nav__toggle");
     var links = document.querySelector(".nav__links");
     if (toggle && links) {
-      toggle.addEventListener("click", function () {
-        var open = links.classList.toggle("is-open");
+      var setMenu = function (open) {
+        links.classList.toggle("is-open", open);
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.classList.toggle("nav-open", open);
+      };
+
+      toggle.addEventListener("click", function () {
+        setMenu(!links.classList.contains("is-open"));
       });
+
       links.querySelectorAll("a").forEach(function (a) {
         a.addEventListener("click", function () {
-          links.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
+          setMenu(false);
         });
+      });
+
+      // Zamknij po kliknięciu poza menu
+      document.addEventListener("click", function (e) {
+        if (!links.classList.contains("is-open")) return;
+        if (links.contains(e.target) || toggle.contains(e.target)) return;
+        setMenu(false);
+      });
+
+      // Zamknij klawiszem Esc
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setMenu(false);
+      });
+
+      // Zamknij przy powrocie do widoku desktopowego
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 980) setMenu(false);
       });
     }
 
@@ -190,6 +212,29 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeLightbox();
       });
+
+      // Dotyk: przesunięcie palcem zamyka podgląd
+      var touchStartX = 0;
+      var touchStartY = 0;
+      box.addEventListener(
+        "touchstart",
+        function (e) {
+          var t = e.changedTouches[0];
+          touchStartX = t.clientX;
+          touchStartY = t.clientY;
+        },
+        { passive: true }
+      );
+      box.addEventListener(
+        "touchend",
+        function (e) {
+          var t = e.changedTouches[0];
+          var dx = Math.abs(t.clientX - touchStartX);
+          var dy = Math.abs(t.clientY - touchStartY);
+          if (dx > 60 || dy > 60) closeLightbox();
+        },
+        { passive: true }
+      );
     }
   });
 })();

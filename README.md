@@ -48,6 +48,22 @@ Wystarczy nadpisać pliki `kite-01…kite-09` (te same nazwy) lub zmienić ście
 w `galeria.html`. Opisy i teksty alternatywne (`alt`) są dwujęzyczne —
 klucze `gallery.cap*` i `gallery.alt*` w `js/i18n.js`.
 
+## Responsywność / urządzenia
+
+Strona jest przystosowana do telefonów i tabletów (Android, iOS/iPadOS, Windows)
+oraz komputerów:
+
+- Płynne łamanie kolumn (siatki `auto-fit`), a poniżej 980 px menu zamienia się
+  w hamburgera z blokadą przewijania tła.
+- Bezpieczne obszary (`env(safe-area-inset-*)`) — treść nie wchodzi pod notch
+  i pasek gestów iPhone'a; dodano też `viewport-fit=cover` i `theme-color`.
+- Przyciski mają min. 44 px wysokości (wygodne dla palca), a efekty `:hover`
+  są wyłączone na ekranach dotykowych.
+- Obsługa `prefers-reduced-motion`, skalowanie tekstu w Safari (`text-size-adjust`)
+  i brak poziomego przewijania.
+- Lightbox galerii zamyka się dotknięciem tła, krzyżykiem, klawiszem Esc
+  lub przesunięciem palca.
+
 ## Uruchomienie
 
 Wystarczy otworzyć `index.html` w przeglądarce. Jeśli masz zainstalowany
