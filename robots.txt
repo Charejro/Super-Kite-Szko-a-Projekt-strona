@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your production domain after publishing.
+Sitemap: https://twojadomena.pl/sitemap.xml

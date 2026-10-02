@@ -7,9 +7,77 @@
   <meta name="color-scheme" content="light" />
   <title data-i18n="home.title">Super Kite — szkoła kitesurfingu w Swarzewie</title>
   <meta name="description" data-i18n-attr="content:home.desc" content="Super Kite — szkoła kitesurfingu na Zatoce Puckiej. 5 lat na rynku, świetne opinie, kursy od 70 EUR." />
+
+  <!-- SEO / social -->
+  <link rel="canonical" href="https://twojadomena.pl/index.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://maps.google.com" />
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+  <meta name="geo.region" content="PL-PM" />
+  <meta name="geo.placename" content="Swarzewo" />
+  <meta name="geo.position" content="54.7564;18.3833" />
+  <meta name="ICBM" content="54.7564, 18.3833" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Super Kite" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Super Kite — szkoła kitesurfingu w Swarzewie" />
+  <meta property="og:description" content="Szkoła kitesurfingu nad Zatoką Pucką. 5 lat na rynku, świetne opinie, kursy od 70 EUR." />
+  <meta property="og:url" content="https://twojadomena.pl/index.html" />
+  <meta property="og:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="853" />
+  <meta property="og:image:alt" content="Kitesurfer w powietrzu podczas skoku nad wodą" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Super Kite — szkoła kitesurfingu w Swarzewie" />
+  <meta name="twitter:description" content="Szkoła kitesurfingu nad Zatoką Pucką. Kursy od 70 EUR, kameralne grupy, certyfikowani instruktorzy." />
+  <meta name="twitter:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dane strukturalne dla Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "@id": "https://twojadomena.pl/#school",
+    "name": "Super Kite — szkoła kitesurfingu",
+    "description": "Szkoła kitesurfingu nad Zatoką Pucką w Swarzewie. Kursy od 70 EUR, kameralne grupy, certyfikowani instruktorzy.",
+    "url": "https://twojadomena.pl/",
+    "image": "https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg",
+    "telephone": "+481234556789",
+    "email": "superszkola@gmail.com",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR, PLN",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Przystań Swarzewo",
+      "addressLocality": "Swarzewo",
+      "addressRegion": "Pomorskie",
+      "addressCountry": "PL"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 54.7564, "longitude": 18.3833 },
+    "areaServed": { "@type": "Place", "name": "Zatoka Pucka, Polska" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "name": "Kurs kitesurfingu 1 godzina", "price": "70", "priceCurrency": "EUR", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 2 godziny", "price": "120", "priceCurrency": "EUR", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 6 godzin", "price": "320", "priceCurrency": "EUR", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 8 godzin", "price": "400", "priceCurrency": "EUR", "url": "https://twojadomena.pl/cennik.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Przejdź do treści</a>
 
   <!-- ================= NAGŁÓWEK ================= -->
   <header class="site-header">
@@ -25,7 +93,7 @@
         </a>
 
         <ul class="nav__links">
-          <li><a href="index.html" class="is-active" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="index.html" class="is-active" aria-current="page" data-i18n="nav.home">Strona główna</a></li>
           <li><a href="#o-szkole" data-i18n="nav.about">O szkole</a></li>
           <li><a href="#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
           <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
@@ -44,7 +112,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ================= HERO ================= -->
     <section class="hero">
@@ -210,7 +278,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <h3 data-i18n="footer.navHeading">Nawigacja</h3>
           <ul>
             <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
             <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
@@ -220,7 +288,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <h3 data-i18n="footer.contactHeading">Kontakt</h3>
           <ul>
             <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
             <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>

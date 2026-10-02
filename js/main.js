@@ -236,5 +236,78 @@
         { passive: true }
       );
     }
+
+    // Formularz kontaktowy (Formspree — wysyłka przez fetch, bez przeładowania)
+    var form = document.getElementById("contact-form");
+    if (form) {
+      var statusEl = form.querySelector(".form__status");
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      var setStatus = function (kind, key) {
+        if (!statusEl) return;
+        var lang = document.documentElement.lang || DEFAULT_LANG;
+        statusEl.textContent = translate(key, lang) || "";
+        statusEl.className =
+          "form__status is-visible" +
+          (kind === "success" ? " is-success" : kind === "error" ? " is-error" : "");
+      };
+
+      form.addEventListener("submit", function (e) {
+        // Gdy działa JavaScript, sami wysyłamy dane (i pokazujemy komunikat)
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        var langField = form.querySelector('input[name="_language"]');
+        if (langField) langField.value = document.documentElement.lang || DEFAULT_LANG;
+
+        var action = form.getAttribute("action") || "";
+        if (action.indexOf("YOUR_FORM_ID") !== -1) {
+          setStatus("error", "info.formNotConfigured");
+          if (window.console && console.warn) {
+            console.warn(
+              "Formspree: podmień YOUR_FORM_ID w informacje.html na własny identyfikator formularza."
+            );
+          }
+          return;
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent =
+            translate("info.formSending", document.documentElement.lang) || submitBtn.textContent;
+        }
+        setStatus("pending", "info.formSending");
+
+        fetch(action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json().catch(function () {
+              return {};
+            });
+          })
+          .then(function () {
+            form.reset();
+            setStatus("success", "info.formOk");
+          })
+          .catch(function () {
+            setStatus("error", "info.formErr");
+          })
+          .then(function () {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent =
+                translate("info.formSubmit", document.documentElement.lang) || submitBtn.textContent;
+            }
+          });
+      });
+    }
   });
 })();

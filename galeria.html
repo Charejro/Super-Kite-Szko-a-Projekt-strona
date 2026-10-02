@@ -7,9 +7,65 @@
   <meta name="color-scheme" content="light" />
   <title data-i18n="gallery.title">Galeria — Super Kite | Zdjęcia z wody</title>
   <meta name="description" data-i18n-attr="content:gallery.desc" content="Galeria zdjęć szkoły kitesurfingu Super Kite." />
+
+  <!-- SEO / social -->
+  <link rel="canonical" href="https://twojadomena.pl/galeria.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Super Kite" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Galeria — Super Kite | Zdjęcia z wody" />
+  <meta property="og:description" content="Kursy, skoki i atmosfera na przystani w Swarzewie." />
+  <meta property="og:url" content="https://twojadomena.pl/galeria.html" />
+  <meta property="og:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="853" />
+  <meta property="og:image:alt" content="Kitesurfer w powietrzu podczas skoku nad wodą" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Galeria — Super Kite" />
+  <meta name="twitter:description" content="Kursy, skoki i atmosfera na przystani w Swarzewie." />
+  <meta name="twitter:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dane strukturalne dla Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Galeria Super Kite",
+    "url": "https://twojadomena.pl/galeria.html",
+    "image": [
+      { "@type": "ImageObject", "name": "Pierwsze kroki na wodzie", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-01-cape-verde-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-01-cape-verde-640.jpg" },
+      { "@type": "ImageObject", "name": "Nauka prowadzenia latawca", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-02-natashquan-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-02-natashquan-640.jpg" },
+      { "@type": "ImageObject", "name": "Skok ponad falę", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-03-jump-640.jpg" },
+      { "@type": "ImageObject", "name": "Wzdłuż wybrzeża", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-04-coast-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-04-coast-640.jpg" },
+      { "@type": "ImageObject", "name": "Sprzęt gotowy do startu", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-05-beach-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-05-beach-640.jpg" },
+      { "@type": "ImageObject", "name": "Pełny wiatr w żaglu", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-06-riding-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-06-riding-640.jpg" },
+      { "@type": "ImageObject", "name": "Zajęcia na płytkiej wodzie", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-07-prasonisi-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-07-prasonisi-640.jpg" },
+      { "@type": "ImageObject", "name": "Trening na plaży", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-08-mandrem-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-08-mandrem-640.jpg" },
+      { "@type": "ImageObject", "name": "Zatoka Pucka w pełnej krasie", "contentUrl": "https://twojadomena.pl/assets/img/opt/kite-09-sweden-1280.jpg", "thumbnailUrl": "https://twojadomena.pl/assets/img/opt/kite-09-sweden-640.jpg" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://twojadomena.pl/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Galeria", "item": "https://twojadomena.pl/galeria.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Przejdź do treści</a>
 
   <header class="site-header">
     <div class="container">
@@ -28,7 +84,7 @@
           <li><a href="index.html#o-szkole" data-i18n="nav.about">O szkole</a></li>
           <li><a href="index.html#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
           <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
-          <li><a href="galeria.html" class="is-active" data-i18n="nav.gallery">Galeria</a></li>
+          <li><a href="galeria.html" class="is-active" aria-current="page" data-i18n="nav.gallery">Galeria</a></li>
           <li><a href="informacje.html" data-i18n="nav.info">Informacje</a></li>
         </ul>
 
@@ -43,7 +99,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="section section--tint">
       <div class="container">
@@ -55,48 +111,84 @@
 
         <div class="gallery-grid">
 
-          <figure class="gallery-item" data-full="assets/img/kite-01-cape-verde.jpg">
-            <img src="assets/img/kite-01-cape-verde.jpg" alt="Początkujący kitesurfer na desce" loading="lazy" data-i18n-attr="alt:gallery.alt1" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-01-cape-verde-1280.jpg">
+            <img src="assets/img/opt/kite-01-cape-verde-640.jpg"
+                 srcset="assets/img/opt/kite-01-cape-verde-640.jpg 640w, assets/img/opt/kite-01-cape-verde-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="419" decoding="async"
+                 alt="Początkujący kitesurfer na desce" loading="lazy" data-i18n-attr="alt:gallery.alt1" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap1">Pierwsze kroki na wodzie</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-02-natashquan.jpg">
-            <img src="assets/img/kite-02-natashquan.jpg" alt="Kursant prowadzący latawiec na plaży" loading="lazy" data-i18n-attr="alt:gallery.alt2" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-02-natashquan-1280.jpg">
+            <img src="assets/img/opt/kite-02-natashquan-640.jpg"
+                 srcset="assets/img/opt/kite-02-natashquan-640.jpg 640w, assets/img/opt/kite-02-natashquan-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="390" decoding="async"
+                 alt="Kursant prowadzący latawiec na plaży" loading="lazy" data-i18n-attr="alt:gallery.alt2" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap2">Nauka prowadzenia latawca</figcaption>
           </figure>
 
-          <figure class="gallery-item gallery-item--wide" data-full="assets/img/kite-03-jump.jpg">
-            <img src="assets/img/kite-03-jump.jpg" alt="Kitesurfer w powietrzu podczas skoku" loading="lazy" data-i18n-attr="alt:gallery.alt3" />
+          <figure class="gallery-item gallery-item--wide" data-full="assets/img/opt/kite-03-jump-1280.jpg">
+            <img src="assets/img/opt/kite-03-jump-640.jpg"
+                 srcset="assets/img/opt/kite-03-jump-640.jpg 640w, assets/img/opt/kite-03-jump-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 66vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="427" decoding="async"
+                 alt="Kitesurfer w powietrzu podczas skoku" loading="lazy" data-i18n-attr="alt:gallery.alt3" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap3">Skok ponad falę</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-04-coast.jpg">
-            <img src="assets/img/kite-04-coast.jpg" alt="Kitesurfer płynący wzdłuż wybrzeża" loading="lazy" data-i18n-attr="alt:gallery.alt4" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-04-coast-1280.jpg">
+            <img src="assets/img/opt/kite-04-coast-640.jpg"
+                 srcset="assets/img/opt/kite-04-coast-640.jpg 640w, assets/img/opt/kite-04-coast-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="457" decoding="async"
+                 alt="Kitesurfer płynący wzdłuż wybrzeża" loading="lazy" data-i18n-attr="alt:gallery.alt4" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap4">Wzdłuż wybrzeża</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-05-beach.jpg">
-            <img src="assets/img/kite-05-beach.jpg" alt="Latawce i deski przygotowane na plaży" loading="lazy" data-i18n-attr="alt:gallery.alt5" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-05-beach-1280.jpg">
+            <img src="assets/img/opt/kite-05-beach-640.jpg"
+                 srcset="assets/img/opt/kite-05-beach-640.jpg 640w, assets/img/opt/kite-05-beach-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="427" decoding="async"
+                 alt="Latawce i deski przygotowane na plaży" loading="lazy" data-i18n-attr="alt:gallery.alt5" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap5">Sprzęt gotowy do startu</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-06-riding.jpg">
-            <img src="assets/img/kite-06-riding.jpg" alt="Kitesurfer płynący z pełnym wiatrem" loading="lazy" data-i18n-attr="alt:gallery.alt6" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-06-riding-1280.jpg">
+            <img src="assets/img/opt/kite-06-riding-640.jpg"
+                 srcset="assets/img/opt/kite-06-riding-640.jpg 640w, assets/img/opt/kite-06-riding-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="427" decoding="async"
+                 alt="Kitesurfer płynący z pełnym wiatrem" loading="lazy" data-i18n-attr="alt:gallery.alt6" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap6">Pełny wiatr w żaglu</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-07-prasonisi.jpg">
-            <img src="assets/img/kite-07-prasonisi.jpg" alt="Zajęcia kitesurfingu na płytkiej wodzie" loading="lazy" data-i18n-attr="alt:gallery.alt7" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-07-prasonisi-1280.jpg">
+            <img src="assets/img/opt/kite-07-prasonisi-640.jpg"
+                 srcset="assets/img/opt/kite-07-prasonisi-640.jpg 640w, assets/img/opt/kite-07-prasonisi-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="424" decoding="async"
+                 alt="Zajęcia kitesurfingu na płytkiej wodzie" loading="lazy" data-i18n-attr="alt:gallery.alt7" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap7">Zajęcia na płytkiej wodzie</figcaption>
           </figure>
 
-          <figure class="gallery-item" data-full="assets/img/kite-08-mandrem.jpg">
-            <img src="assets/img/kite-08-mandrem.jpg" alt="Grupa osób i kitesurfer przy brzegu" loading="lazy" data-i18n-attr="alt:gallery.alt8" />
+          <figure class="gallery-item" data-full="assets/img/opt/kite-08-mandrem-1280.jpg">
+            <img src="assets/img/opt/kite-08-mandrem-640.jpg"
+                 srcset="assets/img/opt/kite-08-mandrem-640.jpg 640w, assets/img/opt/kite-08-mandrem-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 33vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="427" decoding="async"
+                 alt="Grupa osób i kitesurfer przy brzegu" loading="lazy" data-i18n-attr="alt:gallery.alt8" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap8">Trening na plaży</figcaption>
           </figure>
 
-          <figure class="gallery-item gallery-item--wide" data-full="assets/img/kite-09-sweden.jpg">
-            <img src="assets/img/kite-09-sweden.jpg" alt="Szeroki kadr zatoki z kitesurferami" loading="lazy" data-i18n-attr="alt:gallery.alt9" />
+          <figure class="gallery-item gallery-item--wide" data-full="assets/img/opt/kite-09-sweden-1280.jpg">
+            <img src="assets/img/opt/kite-09-sweden-640.jpg"
+                 srcset="assets/img/opt/kite-09-sweden-640.jpg 640w, assets/img/opt/kite-09-sweden-1280.jpg 1280w"
+                 sizes="(min-width: 900px) 66vw, (min-width: 620px) 50vw, 100vw"
+                 width="640" height="480" decoding="async"
+                 alt="Szeroki kadr zatoki z kitesurferami" loading="lazy" data-i18n-attr="alt:gallery.alt9" />
             <figcaption class="gallery-item__caption" data-i18n="gallery.cap9">Zatoka Pucka w pełnej krasie</figcaption>
           </figure>
 
@@ -107,7 +199,7 @@
         </div>
 
         <div class="note gallery-credit">
-          <h3 data-i18n="gallery.creditH3">O zdjęciach</h3>
+          <h2 class="gallery-credit__title" data-i18n="gallery.creditH3">O zdjęciach</h2>
           <p data-i18n="gallery.creditText">Zdjęcia pochodzą z Wikimedia Commons (licencje CC BY / CC BY-SA / CC0).</p>
 
           <details>
@@ -146,7 +238,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <h3 data-i18n="footer.navHeading">Nawigacja</h3>
           <ul>
             <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
             <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
@@ -156,7 +248,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <h3 data-i18n="footer.contactHeading">Kontakt</h3>
           <ul>
             <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
             <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
@@ -173,7 +265,7 @@
   <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
     <button class="lightbox__close" type="button" aria-label="Zamknij" data-i18n-attr="aria-label:gallery.lightboxClose">×</button>
     <figure class="lightbox__figure">
-      <img class="lightbox__img" src="assets/img/kite-01-cape-verde.jpg" alt="" />
+      <img class="lightbox__img" src="assets/img/opt/kite-01-cape-verde-1280.jpg" alt="" decoding="async" />
       <figcaption class="lightbox__caption"></figcaption>
     </figure>
   </div>

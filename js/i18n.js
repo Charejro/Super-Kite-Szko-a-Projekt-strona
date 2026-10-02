@@ -17,6 +17,9 @@ window.SK_I18N = {
     "nav.gallery": "Galeria",
     "nav.info": "Informacje",
 
+    /* ---------- Dostępność ---------- */
+    "a11y.skip": "Przejdź do treści",
+
     /* ---------- Stopka ---------- */
     "footer.tagline": "Szkoła kitesurfingu nad Zatoką Pucką. Uczymy od 5 lat — bezpiecznie, skutecznie i z uśmiechem.",
     "footer.navHeading": "Nawigacja",
@@ -104,6 +107,7 @@ window.SK_I18N = {
     "price.c2d": "Zadzwoń lub napisz — wspólnie wybierzemy termin i sprawdzimy prognozę wiatru.",
     "price.c3t": "Przy złej pogodzie",
     "price.c3d": "Jeśli warunki nie pozwolą na zajęcia, przenosimy je na inny termin bez dodatkowych kosztów.",
+    "price.practicalH2": "Informacje praktyczne",
 
     /* ---------- Informacje ---------- */
     "info.title": "Informacje i kontakt — Super Kite | Przystań Swarzewo",
@@ -132,6 +136,34 @@ window.SK_I18N = {
     "info.mapH2": "Jesteśmy na przystani w Swarzewie",
     "info.mapLead": "Swarzewo leży nad Zatoką Pucką, kilka kilometrów od Pucka. Płytka, osłonięta woda to jedno z najlepszych miejsc w Polsce na naukę kitesurfingu.",
     "info.mapCaption": "Przystań Swarzewo, Polska · najłatwiej wpisać w mapy „Przystań Swarzewo”.",
+
+    /* ---------- Formularz kontaktowy ---------- */
+    "info.formEyebrow": "Formularz kontaktowy",
+    "info.formH2": "Napisz do nas",
+    "info.formLead": "Wypełnij formularz, a wiadomość trafi prosto na nasz e-mail. Odpowiadamy zwykle tego samego dnia.",
+    "info.formName": "Imię i nazwisko *",
+    "info.formNamePh": "np. Anna Kowalska",
+    "info.formEmail": "E-mail *",
+    "info.formEmailPh": "np. anna@example.com",
+    "info.formPhone": "Telefon (opcjonalnie)",
+    "info.formPhonePh": "np. +48 600 000 000",
+    "info.formTopic": "Temat",
+    "info.formTopic0": "Wybierz temat…",
+    "info.formTopic1": "Kurs 1 godzina",
+    "info.formTopic2": "Kurs 2 godziny",
+    "info.formTopic3": "Kurs 6 godzin",
+    "info.formTopic4": "Kurs 8 godzin",
+    "info.formTopic5": "Inne pytanie",
+    "info.formMessage": "Wiadomość *",
+    "info.formMessagePh": "Napisz, czego chcesz się dowiedzieć, kiedy chcesz przyjechać i ile jest osób…",
+    "info.formConsent": "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie. Administratorem danych jest Super Kite.",
+    "info.formSubmit": "Wyślij wiadomość",
+    "info.formSending": "Wysyłanie…",
+    "info.formOk": "Dziękujemy! Wiadomość została wysłana — odpowiemy najszybciej, jak możemy.",
+    "info.formErr": "Ups, nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń do nas.",
+    "info.formNotConfigured": "Formularz nie jest jeszcze skonfigurowany. Napisz do nas bezpośrednio na e-mail lub zadzwoń.",
+    "info.formSubject": "Nowa wiadomość ze strony Super Kite",
+    "info.formHint": "Twoje dane wykorzystamy wyłącznie do odpowiedzi na tę wiadomość.",
 
     /* ---------- Galeria ---------- */
     "gallery.title": "Galeria — Super Kite | Zdjęcia z wody",
@@ -172,6 +204,9 @@ window.SK_I18N = {
     "nav.pricing": "Pricing",
     "nav.gallery": "Gallery",
     "nav.info": "Info",
+
+    /* ---------- Accessibility ---------- */
+    "a11y.skip": "Skip to content",
 
     /* ---------- Footer ---------- */
     "footer.tagline": "Kite school on the Bay of Puck. Teaching for 5 years — safely, effectively and with a smile.",
@@ -260,6 +295,7 @@ window.SK_I18N = {
     "price.c2d": "Call or write to us — we will pick a date together and check the wind forecast.",
     "price.c3t": "Bad weather",
     "price.c3d": "If conditions do not allow the lesson, we move it to another date at no extra cost.",
+    "price.practicalH2": "Practical information",
 
     /* ---------- Info ---------- */
     "info.title": "Info and contact — Super Kite | Swarzewo Marina",
@@ -288,6 +324,34 @@ window.SK_I18N = {
     "info.mapH2": "We are at the marina in Swarzewo",
     "info.mapLead": "Swarzewo lies on the Bay of Puck, a few kilometres from Puck. Its shallow, sheltered water is one of the best places in Poland to learn kitesurfing.",
     "info.mapCaption": "Swarzewo Marina, Poland · the easiest way is to search “Swarzewo Marina” in your maps.",
+
+    /* ---------- Contact form ---------- */
+    "info.formEyebrow": "Contact form",
+    "info.formH2": "Write to us",
+    "info.formLead": "Fill in the form and your message will go straight to our inbox. We usually reply the same day.",
+    "info.formName": "Full name *",
+    "info.formNamePh": "e.g. Anna Nowak",
+    "info.formEmail": "E-mail *",
+    "info.formEmailPh": "e.g. anna@example.com",
+    "info.formPhone": "Phone (optional)",
+    "info.formPhonePh": "e.g. +48 600 000 000",
+    "info.formTopic": "Subject",
+    "info.formTopic0": "Choose a subject…",
+    "info.formTopic1": "1-hour course",
+    "info.formTopic2": "2-hour course",
+    "info.formTopic3": "6-hour course",
+    "info.formTopic4": "8-hour course",
+    "info.formTopic5": "Other question",
+    "info.formMessage": "Message *",
+    "info.formMessagePh": "Tell us what you would like to know, when you want to come and how many people…",
+    "info.formConsent": "I consent to the processing of my personal data in order to answer my enquiry. The data controller is Super Kite.",
+    "info.formSubmit": "Send message",
+    "info.formSending": "Sending…",
+    "info.formOk": "Thank you! Your message has been sent — we will reply as soon as we can.",
+    "info.formErr": "Sorry, the message could not be sent. Please try again or call us.",
+    "info.formNotConfigured": "The form is not configured yet. Please e-mail or call us directly.",
+    "info.formSubject": "New message from the Super Kite website",
+    "info.formHint": "We will use your data only to reply to this message.",
 
     /* ---------- Gallery ---------- */
     "gallery.title": "Gallery — Super Kite | Photos from the water",

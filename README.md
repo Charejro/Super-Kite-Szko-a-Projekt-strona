@@ -11,11 +11,17 @@ super-kite/
 ├── index.html        # strona główna: hero, „O szkole”, „Dlaczego my”, mapa, CTA
 ├── cennik.html       # cennik kursów
 ├── galeria.html      # galeria zdjęć (z lightboxem)
-├── informacje.html   # kontakt + godziny pracy + mapa
+├── informacje.html   # kontakt + godziny pracy + formularz + mapa
 ├── css/style.css     # wspólny styl
 ├── js/i18n.js        # słowniki tłumaczeń PL / EN
-├── js/main.js        # język, menu mobilne, lightbox, rok w stopce
-└── assets/img/       # zdjęcia do galerii
+├── js/main.js        # język, menu mobilne, lightbox, formularz, rok w stopce
+├── robots.txt        # reguły dla robotów wyszukiwarek
+├── sitemap.xml       # mapa strony dla Google
+└── assets/
+    ├── favicon.svg   # ikona strony
+    └── img/
+        ├── kite-01…09.jpg  # oryginały zdjęć (pełna rozdzielczość)
+        └── opt/            # zoptymalizowane wersje 640 px i 1280 px
 ```
 
 ## Dwujęzyczność (PL / EN)
@@ -36,8 +42,39 @@ super-kite/
   „Dlaczego Super Kite jest dla Ciebie?” oraz mapa Google z lokalizacją.
 - **Cennik** — 70 EUR / 1 h, 120 EUR / 2 h, 320 EUR / 6 h, 400 EUR / 8 h.
 - **Galeria** — 9 zdjęć z lightboxem (klik = powiększenie, Esc = zamknięcie).
-- **Informacje** — telefon `123 455 6789`, e-mail `superszkola@gmail.com`
-  i mapa Google z lokalizacją (Przystań Swarzewo, Polska).
+- **Informacje** — telefon `123 455 6789`, e-mail `superszkola@gmail.com`,
+  formularz kontaktowy (Formspree) i mapa Google z lokalizacją
+  (Przystań Swarzewo, Polska).
+
+## Formularz kontaktowy (Formspree)
+
+Formularz na `informacje.html` (`#formularz`) wysyła wiadomości przez darmową
+usługę **Formspree** — bez własnego backendu. Aby podłączyć skrzynkę:
+
+1. Załóż darmowe konto na <https://formspree.io> i utwórz nowy formularz.
+2. Skopiuj identyfikator z adresu endpointu, np. `https://formspree.io/f/abcdwxyz`
+   → identyfikatorem jest `abcdwxyz`.
+3. W `informacje.html` podmień `YOUR_FORM_ID`:
+
+   ```html
+   <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+   ```
+
+4. Wyślij testową wiadomość — pierwsze zgłoszenie trzeba zatwierdzić w panelu
+   Formspree. Odpowiedzi trafiają na e-mail przypisany do konta.
+
+Jak to działa:
+
+- `js/main.js` przechwytuje wysyłkę i robi `fetch` do Formspree, więc użytkownik
+  nie opuszcza strony — widzi komunikat powodzenia/błędu (`aria-live`).
+- Bez JavaScriptu formularz działa klasycznie (zwykły POST do Formspree).
+- Dodane są: pole `_subject` (temat e-maila), `_language` oraz ukryty honeypot
+  `_gotcha` na boty.
+- Walidacja: wymagane imię, e-mail i wiadomość + checkbox zgody (RODO);
+  komunikaty i etykiety są dwujęzyczne (`info.form*` w `js/i18n.js`).
+
+Dopóki `YOUR_FORM_ID` nie zostanie podmieniony, formularz pokaże komunikat
+„formularz nie jest skonfigurowany” zamiast wysyłać wiadomość.
 
 ## Zdjęcia
 
@@ -47,6 +84,39 @@ poglądowe — najlepiej podmienić je na własne zdjęcia z zajęć w Swarzewie
 Wystarczy nadpisać pliki `kite-01…kite-09` (te same nazwy) lub zmienić ścieżki
 w `galeria.html`. Opisy i teksty alternatywne (`alt`) są dwujęzyczne —
 klucze `gallery.cap*` i `gallery.alt*` w `js/i18n.js`.
+
+**Wydajność obrazów.** Oryginały mają 1920 px i łącznie ok. 4,4 MB — to za dużo
+na telefon. W `assets/img/opt/` leżą więc zoptymalizowane wersje:
+
+- `…-640.jpg` — do siatki galerii (miniatury, ~25–80 KB),
+- `…-1280.jpg` — do lightboxa i podglądu (~90–340 KB).
+
+W HTML są podłączone przez `srcset`/`sizes`, więc przeglądarka pobiera mniejszy
+plik. Oryginały zostają w `assets/img/` jako źródło. Jeśli podmienisz zdjęcia,
+wygeneruj nowe wersje (np. w [Squoosh](https://squoosh.app/) lub ImageMagick:
+`magick kite-01.jpg -resize 640x -quality 82 opt/kite-01-640.jpg`).
+
+## SEO i wydajność
+
+Każda podstrona ma: `<link rel="canonical">`, `robots` meta, Open Graph i Twitter
+Card (ze zdjęciem `opt/kite-03-jump-1280.jpg`), favicon SVG oraz **dane
+strukturalne JSON-LD** dla Google:
+
+- `index.html` — `SportsActivityLocation` (adres, geo, telefon, godziny, oferta),
+- `cennik.html` — `OfferCatalog` z cenami + `BreadcrumbList`,
+- `galeria.html` — `ImageGallery` + `BreadcrumbList`,
+- `informacje.html` — `ContactPage` + `BreadcrumbList`.
+
+Dodatkowo: `robots.txt` i `sitemap.xml`, lokalizacja (`geo.region`,
+`geo.position`) oraz `preconnect` do Google Maps.
+
+**Ważne:** w `canonical`, Open Graph, JSON-LD i `sitemap.xml` użyto zastępczej
+domeny `https://twojadomena.pl`. Przed publikacją podmień ją na własną
+(znajdziesz ją m.in. w `<head>` każdej strony, w `sitemap.xml` i `robots.txt`).
+
+Dostępność i szybkość: link „przejdź do treści” (`skip-link`), `aria-current`
+w menu, poprawna kolejność nagłówków, kontrast zgodny z WCAG AA, `loading="lazy"`
+i `decoding="async"` na zdjęciach oraz `loading="lazy"` na mapach.
 
 ## Responsywność / urządzenia
 
@@ -88,3 +158,6 @@ i `informacje.html`.
 - Zdjęcia w galerii (obecne są poglądowe, z Wikimedia Commons)
 - Godziny pracy i sezon w `informacje.html`
 - Adres e-mail: przyjęto `superszkola@gmail.com`
+- Identyfikator Formspree: podmień `YOUR_FORM_ID` w `informacje.html`
+- Domena: podmień `https://twojadomena.pl` w `<head>` stron, `sitemap.xml`
+  i `robots.txt` na własny adres

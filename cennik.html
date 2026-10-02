@@ -7,9 +7,60 @@
   <meta name="color-scheme" content="light" />
   <title data-i18n="price.title">Cennik — Super Kite | Kursy kitesurfingu</title>
   <meta name="description" data-i18n-attr="content:price.desc" content="Cennik kursów kitesurfingu Super Kite: 70 EUR za godzinę, 120 EUR za 2 h, 320 EUR za 6 h, 400 EUR za 8 h." />
+
+  <!-- SEO / social -->
+  <link rel="canonical" href="https://twojadomena.pl/cennik.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Super Kite" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Cennik kursów kitesurfingu — Super Kite" />
+  <meta property="og:description" content="70 EUR / 1 h, 120 EUR / 2 h, 320 EUR / 6 h, 400 EUR / 8 h. Sprzęt i ubezpieczenie w cenie." />
+  <meta property="og:url" content="https://twojadomena.pl/cennik.html" />
+  <meta property="og:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="853" />
+  <meta property="og:image:alt" content="Kitesurfer w powietrzu podczas skoku nad wodą" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cennik kursów kitesurfingu — Super Kite" />
+  <meta name="twitter:description" content="Kursy od 70 EUR. Sprzęt i ubezpieczenie w cenie." />
+  <meta name="twitter:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dane strukturalne dla Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Kursy kitesurfingu Super Kite",
+    "url": "https://twojadomena.pl/cennik.html",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Kurs kitesurfingu 1 godzina", "price": "70", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 2 godziny", "price": "120", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 6 godzin", "price": "320", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://twojadomena.pl/cennik.html" },
+      { "@type": "Offer", "name": "Kurs kitesurfingu 8 godzin", "price": "400", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://twojadomena.pl/cennik.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://twojadomena.pl/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Cennik", "item": "https://twojadomena.pl/cennik.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Przejdź do treści</a>
 
   <header class="site-header">
     <div class="container">
@@ -27,7 +78,7 @@
           <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
           <li><a href="index.html#o-szkole" data-i18n="nav.about">O szkole</a></li>
           <li><a href="index.html#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
-          <li><a href="cennik.html" class="is-active" data-i18n="nav.pricing">Cennik</a></li>
+          <li><a href="cennik.html" class="is-active" aria-current="page" data-i18n="nav.pricing">Cennik</a></li>
           <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
           <li><a href="informacje.html" data-i18n="nav.info">Informacje</a></li>
         </ul>
@@ -43,7 +94,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="section section--tint">
       <div class="container">
@@ -94,6 +145,7 @@
 
     <section class="section">
       <div class="container">
+        <h2 class="sr-only" data-i18n="price.practicalH2">Informacje praktyczne</h2>
         <div class="grid grid--3">
           <article class="card">
             <div class="card__icon" aria-hidden="true">💳</div>
@@ -132,7 +184,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <h3 data-i18n="footer.navHeading">Nawigacja</h3>
           <ul>
             <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
             <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
@@ -142,7 +194,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <h3 data-i18n="footer.contactHeading">Kontakt</h3>
           <ul>
             <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
             <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>

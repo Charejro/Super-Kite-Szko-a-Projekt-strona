@@ -7,9 +7,81 @@
   <meta name="color-scheme" content="light" />
   <title data-i18n="info.title">Informacje i kontakt — Super Kite | Przystań Swarzewo</title>
   <meta name="description" data-i18n-attr="content:info.desc" content="Kontakt do szkoły kitesurfingu Super Kite: tel. 123 455 6789, superszkola@gmail.com." />
+
+  <!-- SEO / social -->
+  <link rel="canonical" href="https://twojadomena.pl/informacje.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://maps.google.com" />
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+  <meta name="geo.region" content="PL-PM" />
+  <meta name="geo.placename" content="Swarzewo" />
+  <meta name="geo.position" content="54.7564;18.3833" />
+  <meta name="ICBM" content="54.7564, 18.3833" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Super Kite" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Kontakt i lokalizacja — Super Kite" />
+  <meta property="og:description" content="Tel. 123 455 6789, superszkola@gmail.com. Formularz kontaktowy i mapa — Przystań Swarzewo." />
+  <meta property="og:url" content="https://twojadomena.pl/informacje.html" />
+  <meta property="og:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="853" />
+  <meta property="og:image:alt" content="Kitesurfer w powietrzu podczas skoku nad wodą" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt i lokalizacja — Super Kite" />
+  <meta name="twitter:description" content="Tel. 123 455 6789, superszkola@gmail.com. Przystań Swarzewo, Polska." />
+  <meta name="twitter:image" content="https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg" />
+
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dane strukturalne dla Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://twojadomena.pl/informacje.html",
+    "name": "Kontakt i lokalizacja — Super Kite",
+    "mainEntity": {
+      "@type": "SportsActivityLocation",
+      "name": "Super Kite — szkoła kitesurfingu",
+      "url": "https://twojadomena.pl/",
+      "telephone": "+481234556789",
+      "email": "superszkola@gmail.com",
+      "image": "https://twojadomena.pl/assets/img/opt/kite-03-jump-1280.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Przystań Swarzewo",
+        "addressLocality": "Swarzewo",
+        "addressRegion": "Pomorskie",
+        "addressCountry": "PL"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 54.7564, "longitude": 18.3833 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://twojadomena.pl/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Informacje", "item": "https://twojadomena.pl/informacje.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Przejdź do treści</a>
 
   <header class="site-header">
     <div class="container">
@@ -29,7 +101,7 @@
           <li><a href="index.html#dlaczego-my" data-i18n="nav.why">Dlaczego my</a></li>
           <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
           <li><a href="galeria.html" data-i18n="nav.gallery">Galeria</a></li>
-          <li><a href="informacje.html" class="is-active" data-i18n="nav.info">Informacje</a></li>
+          <li><a href="informacje.html" class="is-active" aria-current="page" data-i18n="nav.info">Informacje</a></li>
         </ul>
 
         <div class="nav__actions">
@@ -43,7 +115,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="section section--tint">
       <div class="container">
@@ -82,7 +154,7 @@
             </ul>
 
             <div class="hero__actions" style="margin-top:1.5rem">
-              <a class="btn btn--primary" href="mailto:superszkola@gmail.com?subject=Kitesurfing" data-i18n="info.write">Napisz do nas</a>
+              <a class="btn btn--primary" href="#formularz" data-i18n="info.write">Napisz do nas</a>
               <a class="btn btn--dark" href="cennik.html" data-i18n="info.pricing">Zobacz cennik</a>
             </div>
           </div>
@@ -102,6 +174,75 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FORMULARZ KONTAKTOWY ================= -->
+    <section class="section" id="formularz">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="info.formEyebrow">Formularz kontaktowy</span>
+          <h2 data-i18n="info.formH2">Napisz do nas</h2>
+          <p data-i18n="info.formLead">Wypełnij formularz, a wiadomość trafi prosto na nasz e-mail. Odpowiadamy zwykle tego samego dnia.</p>
+        </div>
+
+        <div class="form-card">
+          <!-- Aby podłączyć formularz: załóż darmowe konto na https://formspree.io
+               i zamień YOUR_FORM_ID poniżej na swój identyfikator formularza. -->
+          <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="Nowa wiadomość ze strony Super Kite" data-i18n-attr="value:info.formSubject" />
+            <input type="hidden" name="_language" value="pl" />
+
+            <!-- Honeypot: ukryte pole-pułapka na boty. Ludzie go nie widzą, boty wypełniają. -->
+            <div class="form__hp" aria-hidden="true">
+              <label for="cf-gotcha">Nie wypełniaj tego pola</label>
+              <input type="text" id="cf-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form__row">
+              <div class="form__field">
+                <label for="cf-name" data-i18n="info.formName">Imię i nazwisko *</label>
+                <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="np. Anna Kowalska" data-i18n-attr="placeholder:info.formNamePh" />
+              </div>
+              <div class="form__field">
+                <label for="cf-email" data-i18n="info.formEmail">E-mail *</label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="np. anna@example.com" data-i18n-attr="placeholder:info.formEmailPh" />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__field">
+                <label for="cf-phone" data-i18n="info.formPhone">Telefon (opcjonalnie)</label>
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="np. +48 600 000 000" data-i18n-attr="placeholder:info.formPhonePh" />
+              </div>
+              <div class="form__field">
+                <label for="cf-topic" data-i18n="info.formTopic">Temat</label>
+                <select id="cf-topic" name="topic">
+                  <option value="" data-i18n="info.formTopic0">Wybierz temat…</option>
+                  <option value="Kurs 1 godzina" data-i18n="info.formTopic1">Kurs 1 godzina</option>
+                  <option value="Kurs 2 godziny" data-i18n="info.formTopic2">Kurs 2 godziny</option>
+                  <option value="Kurs 6 godzin" data-i18n="info.formTopic3">Kurs 6 godzin</option>
+                  <option value="Kurs 8 godzin" data-i18n="info.formTopic4">Kurs 8 godzin</option>
+                  <option value="Inne pytanie" data-i18n="info.formTopic5">Inne pytanie</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label for="cf-message" data-i18n="info.formMessage">Wiadomość *</label>
+              <textarea id="cf-message" name="message" required placeholder="Napisz, czego chcesz się dowiedzieć…" data-i18n-attr="placeholder:info.formMessagePh"></textarea>
+            </div>
+
+            <label class="form__consent" for="cf-consent">
+              <input type="checkbox" id="cf-consent" name="consent" value="yes" required />
+              <span data-i18n="info.formConsent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie.</span>
+            </label>
+
+            <button class="btn btn--primary form__submit" type="submit" data-i18n="info.formSubmit">Wyślij wiadomość</button>
+            <p class="form__status" id="cf-status" role="status" aria-live="polite"></p>
+            <p class="form__hint" data-i18n="info.formHint">Twoje dane wykorzystamy wyłącznie do odpowiedzi na tę wiadomość.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -146,7 +287,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.navHeading">Nawigacja</h4>
+          <h3 data-i18n="footer.navHeading">Nawigacja</h3>
           <ul>
             <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
             <li><a href="cennik.html" data-i18n="nav.pricing">Cennik</a></li>
@@ -156,7 +297,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer.contactHeading">Kontakt</h4>
+          <h3 data-i18n="footer.contactHeading">Kontakt</h3>
           <ul>
             <li><a href="tel:1234556789">tel. 123 455 6789</a></li>
             <li><a href="mailto:superszkola@gmail.com">superszkola@gmail.com</a></li>
